@@ -7,7 +7,7 @@ class Pet(models.Model):
     description = models.TextField()
     phone = models.CharField(max_length=11)
     email = models.EmailField()
-    begin_date = models.DateTimeField(auto_now_add=True)
+    begin_date = models.DateTimeField()
     photo = models.ImageField()
     active = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
