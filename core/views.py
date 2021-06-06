@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 # Create your views here.
@@ -21,6 +22,6 @@ def submit_login(request):
             login(request, user)
             return redirect('/login/#')
         else:
-            message.error(request, 'Usuário e senha inválido. Favor tentar novamente.')
+            messages.error(request, 'Usuário e senha inválido. Favor tentar novamente.')
     return redirect('/login')
 
