@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login
+
 
 # Create your views here.
 
@@ -16,5 +17,10 @@ def submit_login(request):
         print(username)
         print(password)
         user = authenticate(username=username, password=password)
-
+        if user is not None:
+            login(request, user)
+            return redirect('/login/#')
+        else:
+            message.error(request, 'Usuário e senha inválido. Favor tentar novamente.')
+    return redirect('/login')
 
