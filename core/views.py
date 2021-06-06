@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -14,5 +15,6 @@ def submit_login(request):
         password = request.POST.get('password')
         print(username)
         print(password)
+        user = authenticate(username=username, password=password)
 
 
