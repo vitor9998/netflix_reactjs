@@ -23,5 +23,5 @@ def submit_login(request):
             return redirect('/login/#')
         else:
             messages.error(request, 'Usuário e senha inválido. Favor tentar novamente.')
-    return redirect('/login')
+    return redirect('/login/')
 
