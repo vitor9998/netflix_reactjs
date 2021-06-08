@@ -6,6 +6,9 @@ from django.contrib import messages
 
 # Create your views here.
 
+def index(request):
+    return render(request, 'index.html')
+
 def login_user(request):
     return render(request, 'login.html')
 
@@ -20,7 +23,7 @@ def submit_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/login/#')
+            return redirect('/')
         else:
             messages.error(request, 'Usuário e senha inválido. Favor tentar novamente.')
     return redirect('/login/')
