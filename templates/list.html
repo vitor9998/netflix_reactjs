@@ -1,1 +1,11 @@
 {% {% extends 'model-page.html' %}%}
+
+{% block content %}
+    {% for p in pet %}
+
+        {{ p.city }}
+        {{ p.description }}
+    {% endfor %}
+    <p>123</p>
+
+{% endblock %}
