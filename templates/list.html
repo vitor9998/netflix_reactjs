@@ -6,8 +6,11 @@
         <div class="row">
             {% for p in pet %}
             <div class="col-sm-4">
-                <p>{{ p.city }}</div>
-            </div>
+                <div class="">
+                    <img src="{{ p.photo.url }}">
+                    <div class="container">
+                        <p>{{ p.city }}</div>
+                    </div>
             {% endfor %}
         </div>
     </div>
