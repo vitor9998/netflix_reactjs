@@ -1,12 +1,13 @@
 <!DOCTYPE <!DOCTYPE hmtl>
 <html>
     <head>
+        {% block style %}{% endblock %}
         {% incluse "model-header.html" %}
     </head>
 
     <body>
 
-        {% block content %} {% endblock %}     
+        {% block content %} {% endblock %}
         {% include "model-footer.html" %}
 
     </body>
