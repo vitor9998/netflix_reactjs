@@ -6,10 +6,11 @@
         <div class="row">
             {% for p in pet %}
             <div class="col-sm-4">
-                <div class="">
-                    <img src="{{ p.photo.url }}">
+                <div class="polaroid">
+                    <img src="{{ p.photo.url }}" style="width:100%">
                     <div class="container">
-                        <p>{{ p.city }}</div>
+                        <p>{{ p.city }}</p>
+                        </div>
                     </div>
             {% endfor %}
         </div>

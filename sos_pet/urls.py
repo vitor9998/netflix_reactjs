@@ -18,7 +18,7 @@ from django.urls import path
 from core import views
 from django.views.generic import RedirectView
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
-from . import settings 
+from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
