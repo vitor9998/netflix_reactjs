@@ -17,6 +17,9 @@ def list_user_pets(request):
     pet = Pet.objects.filter(activate=True, user=request.user)
     return render(request, 'list.html', {'pet':pet})
 
+def pet_detail(request, id):
+    pet = Pet.objects.get(active=True, id=id)
+
 def logout_user(request):
     logout(request)
     return redirect('/login/')
