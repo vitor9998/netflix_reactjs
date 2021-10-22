@@ -19,6 +19,8 @@ def list_user_pets(request):
 
 def pet_detail(request, id):
     pet = Pet.objects.get(active=True, id=id)
+    print(pet.id)
+    return render(request, 'pet.html', {'pet':pet})
 
 def logout_user(request):
     logout(request)
